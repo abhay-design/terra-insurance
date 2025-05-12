@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Roboto_Serif } from "next/font/google";
 import "./globals.css";
+import clsx from "clsx";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoSerif = Roboto_Serif({
+  variable: "--font-roboto-serif",
   subsets: ["latin"],
 });
 
@@ -23,12 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={clsx(roboto.variable, robotoSerif.variable)}>
+      <body>{children}</body>
     </html>
   );
 }

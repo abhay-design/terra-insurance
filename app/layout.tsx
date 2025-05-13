@@ -3,6 +3,7 @@ import { Roboto, Roboto_Serif } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import { createClient } from "@/prismicio";
+import Header from "@/components/Header";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -17,14 +18,14 @@ const robotoSerif = Roboto_Serif({
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
 
-  const page = await client.getSingle("settings");
+  const settings = await client.getSingle("settings");
 
   return {
-    title: page.data.site_title || "terra fallback",
+    title: settings.data.site_title || "terra fallback",
     description:
-      page.data.meta_description || "terra is best insurace site for you.",
+      settings.data.meta_description || "terra is best insurace site for you.",
     openGraph: {
-      images: [page.data.og_image.url || ""],
+      images: [settings.data.og_image.url || ""],
     },
   };
 }
@@ -37,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx(roboto.variable, robotoSerif.variable)}>
       <body>
-        <header>header!</header>
+        <Header />
         {children}
         <footer>footer!</footer>
       </body>

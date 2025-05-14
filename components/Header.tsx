@@ -18,7 +18,7 @@ async function Header() {
             <ul className="flex flex-wrap list-none">
               <li className="relative mr-[10px!important]">
                 <Link
-                  href="#"
+                  href="/"
                   className="home text-[#bebebe] text-[10px] font-bold pl-[23px!important]  relative mr-[11px!important]"
                 >
                   Home
@@ -26,7 +26,7 @@ async function Header() {
               </li>
               <li className="relative mr-[10px!important]">
                 <Link
-                  href="#"
+                  href="/contact-us"
                   className="tel text-[#bebebe] text-[10px] font-bold pl-[23px!important]  relative mr-[11px!important]"
                 >
                   Call Us
@@ -34,7 +34,7 @@ async function Header() {
               </li>
               <li className="relative mr-[10px!important]">
                 <Link
-                  href="#"
+                  href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=00000002-0000-0ff1-ce00-000000000000&redirect_uri=https%3a%2f%2foutlook.office365.com%2fowa%2f&resource=00000002-0000-0ff1-ce00-000000000000&response_mode=form_post&response_type=code+id_token&scope=openid&msafed=1&msaredir=1&client-request-id=d9ec6978-6be4-e3b8-d589-ac5e88f472d6&protectedtoken=true&claims=%7b%22id_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d&nonce=638745365803164402.a6563b02-d9aa-4eff-8378-154aca504c5c&state=JYzLboMwEEWh_ZZkR2LwA7xAlfoCRQkLikLCbmxIS2KLyhAQ_bZ-XC26OHNHRzPXdRzn0fJgcZEdTshwFBKKGY0Q9hkhKNgAowwLFHg1B_BIc7l4EQ4jz6cEJFBEJJWu_f11t90E2ycNrRq6u2nj_22FYWiMgRVBSxrzuZGdXveD9bG_Nk3dmkYORRdDmiOZHth-5mN9ynsRcLPXXFdaXaviEGQf9CoCNIry_Vu88FtVHieRqDvM3Hp_EjhT-x8-nEvV1wn3pb7x5TbNx12RfdXJcZb6TWWvz6g67eazpZqXzj8&sso_reload=true"
                   className="mail text-[#bebebe] text-[10px] font-bold pl-[23px!important] relative mr-[11px!important]"
                 >
                   Email
@@ -42,7 +42,7 @@ async function Header() {
               </li>
               <li className="relative mr-[10px!important]">
                 <Link
-                  href="#"
+                  href="/contact-us/apply-now"
                   className="apply text-[#bebebe] text-[10px] font-bold pl-[23px!important] relative mr-[11px!important]"
                 >
                   Apply Now
@@ -80,7 +80,7 @@ async function Header() {
         <div className="container">
           <div className="wrapper w-full relative flex flex-wrap items-center justify-between">
             <div className="logo-wrap relative max-w-[184px] w-full my-[20px!important]">
-              <Link href={"#"} className="emptyLink">
+              <Link href={"/"} className="emptyLink">
                 .
               </Link>
               <Image

@@ -34,6 +34,13 @@
           "label": "Navigation",
           "repeat": true,
           "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
             "link": {
               "type": "Link",
               "config": {
@@ -42,7 +49,7 @@
                 "select": null,
                 "allowTargetBlank": true,
                 "allowText": true,
-                "repeat": true
+                "repeat": false
               }
             }
           }

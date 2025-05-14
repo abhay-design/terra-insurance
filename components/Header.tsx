@@ -2,6 +2,7 @@ import React from "react";
 import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
+import Image from "next/image";
 
 async function Header() {
   const client = createClient();
@@ -75,18 +76,41 @@ async function Header() {
           </div>
         </div>
       </div>
-
-      <nav>
-        <ul>
-          {settings.data.navigation.map((item, index) => (
-            <li key={index}>
-              {item.link.map((link) => (
-                <PrismicNextLink key={link.key} field={link} />
-              ))}
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="main-nav relative bg-[#eceae9e6]">
+        <div className="container">
+          <div className="wrapper w-full relative flex flex-wrap items-center justify-between">
+            <div className="logo-wrap relative max-w-[184px] w-full my-[20px!important]">
+              <Link href={"#"} className="emptyLink">
+                .
+              </Link>
+              <Image
+                src={"/icon/terra_insurance_logo.svg"}
+                alt="img"
+                width={184}
+                height={50}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="desktop-nav relative">
+              <ul className="flex flex-wrap items-center h-[92px]">
+                {settings.data.navigation.map((item, index) => (
+                  <li
+                    key={index}
+                    className="h-full ml-[8px] flex items-center relative"
+                  >
+                    <PrismicNextLink
+                      field={item.link}
+                      className="text-[13px] px-[10px!important] pt-[53px!important] pb-[20px] text-[#333] relative uppercase"
+                    >
+                      {item.label}
+                    </PrismicNextLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

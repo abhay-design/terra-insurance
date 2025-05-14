@@ -30,6 +30,31 @@ export interface SettingsDocumentDataNavigationItem {
 }
 
 /**
+ * Item in *Settings → Footer*
+ */
+export interface SettingsDocumentDataFooterItem {
+  /**
+   * Label field in *Settings → Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Label
+   * - **API ID Path**: settings.footer[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *Settings → Footer*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Link
+   * - **API ID Path**: settings.footer[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
  * Content for Settings documents
  */
 interface SettingsDocumentData {
@@ -76,6 +101,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   navigation: prismic.GroupField<Simplify<SettingsDocumentDataNavigationItem>>;
+
+  /**
+   * Footer field in *Settings*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.footer[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  footer: prismic.GroupField<Simplify<SettingsDocumentDataFooterItem>>;
 }
 
 /**
@@ -120,6 +156,7 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
+      SettingsDocumentDataFooterItem,
       AllDocumentTypes,
     };
   }

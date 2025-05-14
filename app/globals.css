@@ -121,3 +121,9 @@ header .block-search-form .btn-search {
   background: url("/icon/search_icon.png") no-repeat;
   background-position: right;
 }
+
+footer ul li:first-child a {
+  color: #b5cb8b;
+  text-decoration: underline;
+  text-transform: uppercase;
+}

@@ -24,3 +24,90 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+body {
+  scroll-behavior: smooth;
+  background: #333;
+}
+
+header .menu-block a::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -12px;
+  width: 1px;
+  height: 150%;
+  pointer-events: none;
+  background: #454546;
+}
+
+header .menu-block a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 12px;
+  background-size: cover;
+  transform: translateY(-50%);
+  background: url("/icon/home_icon.png");
+}
+
+header .menu-block a.tel::before {
+  background: url("/icon/call_us_icon.png");
+}
+
+header .menu-block a.mail::before {
+  background: url("/icon/email_icon.png");
+}
+
+header .menu-block a.apply::before {
+  background: url("/icon/apply_icon.png");
+}
+
+header .menu-block a.login::before {
+  background: url("/icon/insured_login_icon.png");
+}
+
+header .block-search-form::before {
+  content: "";
+  position: absolute;
+  top: 45%;
+  right: 28px;
+  width: 1px;
+  height: 50%;
+  transform: translateY(-35%);
+  pointer-events: none;
+  z-index: 2;
+  background: #bebebe;
+}
+
+header .block-search-form .btn-search {
+  padding-left: 5px;
+  background-size: contain;
+  background-position: right;
+  width: 20px;
+  height: 15px;
+  position: absolute;
+  top: 44%;
+  right: 8px;
+  text-indent: -9999px;
+  transform: translateY(-40%);
+  cursor: pointer;
+  background: url("/icon/search_icon.png") no-repeat;
+  background-position: right;
+}

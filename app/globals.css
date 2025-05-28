@@ -127,3 +127,8 @@ footer ul li:first-child a {
   text-decoration: underline;
   text-transform: uppercase;
 }
+
+.btn-blue {
+  background: #00529c url("/icon/arrow.png") no-repeat;
+  background-position: right center;
+}

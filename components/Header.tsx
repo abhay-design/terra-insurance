@@ -10,7 +10,7 @@ async function Header() {
   const settings = await client.getSingle("settings");
 
   return (
-    <header>
+    <header className="relative z-[22]">
       {/* <Link href={"/"}> {settings.data.site_title}</Link> */}
       <div className="top-nav py-[7px!important]">
         <div className="container">

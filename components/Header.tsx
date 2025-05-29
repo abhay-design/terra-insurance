@@ -152,6 +152,27 @@ export default function Header() {
                     >
                       {item.label}
                     </PrismicNextLink>
+                    <div
+                      className={`subMenu absolute top-[90px] left-0 w-[199px] py-[5px!important] px-[12px!important] h-auto bg-[#333] ${
+                        hoveredItem === index
+                          ? "block opacity-100 visible"
+                          : "hidden opacity-0 invisible"
+                      } z-[1] transition-all duration-300 ease-in-out`}
+                    >
+                      <ul>
+                        {item.sublink &&
+                          item.sublink.map((link, linkIndex) => (
+                            <li key={linkIndex} className="mb-[8px] w-full">
+                              <PrismicNextLink
+                                field={link}
+                                className="text-[#ccc] font-thin text-[12px] transition-all duration-300 ease-in-out inline-block hover:underline ml-2"
+                              >
+                                {/* {item.sublable} */}
+                              </PrismicNextLink>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
                   </li>
                 ))}
               </ul>

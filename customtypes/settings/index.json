@@ -51,6 +51,17 @@
                 "allowText": true,
                 "repeat": false
               }
+            },
+            "sublink": {
+              "type": "Link",
+              "config": {
+                "label": "sublink",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": true
+              }
             }
           }
         }

@@ -31,7 +31,7 @@ async function Footer() {
                         field={sublink}
                         className="text-[#ccc] font-thin text-[12px] transition-all duration-300 ease-in-out inline-block hover:underline ml-2"
                       >
-                        {item.label}
+                        {item.sublable}
                       </PrismicNextLink>
                     </li>
                   ))}

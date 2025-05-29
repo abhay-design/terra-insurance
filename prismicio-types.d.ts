@@ -133,13 +133,23 @@ export interface SettingsDocumentDataFooterItem {
    * sublinks field in *Settings → Footer*
    *
    * - **Field Type**: Link
-   * - **Placeholder**: sublinks
+   * - **Placeholder**: *None*
    * - **API ID Path**: settings.footer[].sublinks
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   sublinks: prismic.Repeatable<
     prismic.LinkField<string, string, unknown, prismic.FieldState, never>
   >;
+
+  /**
+   * sublable field in *Settings → Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.footer[].sublable
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sublable: prismic.KeyTextField;
 }
 
 /**

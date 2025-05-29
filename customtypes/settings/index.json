@@ -83,11 +83,18 @@
               "type": "Link",
               "config": {
                 "label": "sublinks",
-                "placeholder": "sublinks",
+                "placeholder": "",
                 "select": null,
                 "allowTargetBlank": true,
                 "allowText": true,
                 "repeat": true
+              }
+            },
+            "sublable": {
+              "type": "Text",
+              "config": {
+                "label": "sublable",
+                "placeholder": ""
               }
             }
           }

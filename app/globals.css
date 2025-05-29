@@ -122,6 +122,12 @@ header .block-search-form .btn-search {
   background-position: right;
 }
 
+header .main-link:hover {
+  box-shadow: 0px 2px 3px 1px #b1b1b1 inset;
+  background: url("/icon/nav_bg.png");
+  background-size: contain;
+}
+
 .btn-blue {
   background: #00529c url("/icon/arrow.png") no-repeat;
   background-position: right center;

@@ -162,10 +162,13 @@ export default function Header() {
                       <ul>
                         {item.sublink &&
                           item.sublink.map((link, linkIndex) => (
-                            <li key={linkIndex} className="mb-[8px] w-full">
+                            <li
+                              key={linkIndex}
+                              className="py-[2px!important] sub-link relative w-full"
+                            >
                               <PrismicNextLink
                                 field={link}
-                                className="text-[#ccc] font-thin text-[12px] transition-all duration-300 ease-in-out inline-block hover:underline ml-2"
+                                className="text-[#ccc] font-thin text-[12px] transition-all duration-300 ease-in-out inline-block hover:underline"
                               >
                                 {/* {item.sublable} */}
                               </PrismicNextLink>

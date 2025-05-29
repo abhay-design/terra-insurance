@@ -132,3 +132,17 @@ header .main-link:hover {
   background: #00529c url("/icon/arrow.png") no-repeat;
   background-position: right center;
 }
+
+.sub-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  background: #666;
+}
+
+.sub-link:last-child::after {
+  display: none;
+}

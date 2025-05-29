@@ -122,12 +122,6 @@ header .block-search-form .btn-search {
   background-position: right;
 }
 
-footer ul li:first-child a {
-  color: #b5cb8b;
-  text-decoration: underline;
-  text-transform: uppercase;
-}
-
 .btn-blue {
   background: #00529c url("/icon/arrow.png") no-repeat;
   background-position: right center;

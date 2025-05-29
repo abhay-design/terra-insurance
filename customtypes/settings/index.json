@@ -71,8 +71,8 @@
             "link": {
               "type": "Link",
               "config": {
-                "label": "Link",
-                "placeholder": "Link",
+                "label": "link",
+                "placeholder": "",
                 "select": null,
                 "allowTargetBlank": true,
                 "allowText": true,

@@ -120,10 +120,10 @@ export interface SettingsDocumentDataFooterItem {
   label: prismic.KeyTextField;
 
   /**
-   * Link field in *Settings → Footer*
+   * link field in *Settings → Footer*
    *
    * - **Field Type**: Link
-   * - **Placeholder**: Link
+   * - **Placeholder**: *None*
    * - **API ID Path**: settings.footer[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */

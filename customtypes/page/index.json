@@ -1,16 +1,15 @@
 {
   "format": "page",
-  "id": "about_us",
-  "label": "About Us",
-  "repeatable": false,
+  "id": "page",
+  "label": "Page",
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
-      "title": {
-        "type": "Text",
+      "uid": {
+        "type": "UID",
         "config": {
-          "label": "title",
-          "placeholder": ""
+          "label": "UID"
         }
       },
       "slices": {
@@ -19,6 +18,12 @@
         "config": {
           "choices": {
             "banner_second": {
+              "type": "SharedSlice"
+            },
+            "col_three_cards": {
+              "type": "SharedSlice"
+            },
+            "hero": {
               "type": "SharedSlice"
             }
           }

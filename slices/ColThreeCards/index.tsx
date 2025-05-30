@@ -46,36 +46,44 @@ const ColThreeCards: FC<ColThreeCardsProps> = ({ slice }) => {
             >
               <div className="card-wrap relative">
                 <PrismicRichText field={item.heading} components={components} />
-                <div className="img-wrap max-w-full h-[98px] mb-[16px!important] relative">
-                  <PrismicNextImage
-                    field={item.image}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                {item.image && (
+                  <div className="img-wrap max-w-full h-[98px] mb-[16px!important] relative">
+                    <PrismicNextImage
+                      field={item.image}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
                 <div className="subtitle">
-                  <p>
+                  {item.paragraph && (
                     <PrismicRichText
                       field={item.paragraph}
                       components={components}
                     />
-                  </p>
-                  <ul className="links mt-[12px!important] list-none">
-                    {item.links.map((link) => (
-                      <li key={link.key} className="mb-[7px!important]">
-                        <PrismicNextLink
-                          field={link}
-                          className="pointer text-[#00529c] text-[12px] font-normal pr-[9px] relative"
-                        ></PrismicNextLink>
-                      </li>
-                    ))}
-                  </ul>
+                  )}
+                  {item.links && item.links.length > 0 && (
+                    <ul className="links mt-[12px!important] list-none">
+                      {item.links.map((link) => (
+                        <li key={link.key} className="mb-[7px!important]">
+                          <PrismicNextLink
+                            field={link}
+                            className="pointer text-[#00529c] text-[12px] font-normal pr-[9px] relative"
+                          >
+                            {/* Add fallback text */}
+                          </PrismicNextLink>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-                <div className="btn-wrap">
-                  <Button
-                    field={item.btn}
-                    className="btn-small text-[12px!important]  pt-[6px!important] pr-[32px!important] pb-[5px!important] pl-[9px!important]"
-                  />
-                </div>
+                {item.btn && item.btn.link_type !== "Any" && (
+                  <div className="btn-wrap">
+                    <Button
+                      field={item.btn}
+                      className="btn-small text-[12px!important] pt-[6px!important] pr-[32px!important] pb-[5px!important] pl-[9px!important]"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}

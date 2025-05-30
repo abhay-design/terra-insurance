@@ -57,7 +57,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         <div className="btn-wrapper mt-[20px!important]  flex flex-wrap ">
           <Button
             field={slice.primary.button_link}
-            className="pt-[7px!important] pr-[50px!important] pb-[4px!important] pl-[20px!important]"
+            className="pt-[7px!important] text-[13px] pr-[50px!important] pb-[4px!important] pl-[20px!important]"
           >
             {slice.primary.button}
           </Button>

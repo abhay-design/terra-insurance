@@ -8,7 +8,7 @@ export default function Button({
   return (
     <PrismicNextLink
       className={clsx(
-        "btn-blue text-[13px]  text-[#fff] font-thin inline-block relative uppercase  bg-[#00529c]",
+        "btn-blue  text-[#fff] font-thin inline-block relative uppercase  bg-[#00529c]",
         className
       )}
       {...restProps}

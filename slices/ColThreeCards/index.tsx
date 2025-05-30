@@ -13,7 +13,7 @@ import Button from "@/components/Button";
  */
 const components: JSXMapSerializer = {
   heading3: ({ children }) => (
-    <Heading as="h3" size="md" className="mb-[7px!important]">
+    <Heading as="h3" size="md" className="mb-[6px!important]">
       {children}
     </Heading>
   ),
@@ -64,7 +64,7 @@ const ColThreeCards: FC<ColThreeCardsProps> = ({ slice }) => {
                   {item.links && item.links.length > 0 && (
                     <ul className="links mt-[12px!important] list-none">
                       {item.links.map((link) => (
-                        <li key={link.key} className="mb-[7px!important]">
+                        <li key={link.key}>
                           <PrismicNextLink
                             field={link}
                             className="pointer text-[#00529c] text-[12px] font-normal pr-[9px] relative"
@@ -80,7 +80,7 @@ const ColThreeCards: FC<ColThreeCardsProps> = ({ slice }) => {
                   <div className="btn-wrap">
                     <Button
                       field={item.btn}
-                      className="btn-small text-[12px!important] pt-[6px!important] pr-[32px!important] pb-[5px!important] pl-[9px!important]"
+                      className="btn-small text-[11px] pt-[6px!important] pr-[32px!important] pb-[5px!important] pl-[9px!important]"
                     />
                   </div>
                 )}

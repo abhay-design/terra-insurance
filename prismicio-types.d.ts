@@ -4,6 +4,71 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type AboutUsDocumentDataSlicesSlice = never;
+
+/**
+ * Content for About Us documents
+ */
+interface AboutUsDocumentData {
+  /**
+   * Slice Zone field in *About Us*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<AboutUsDocumentDataSlicesSlice> /**
+   * Meta Title field in *About Us*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: about_us.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *About Us*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: about_us.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *About Us*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * About Us document from Prismic
+ *
+ * - **API ID**: `about_us`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutUsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<AboutUsDocumentData>,
+    "about_us",
+    Lang
+  >;
+
 type HomepageDocumentDataSlicesSlice = ColThreeCardsSlice | HeroSlice;
 
 /**
@@ -240,7 +305,65 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument | SettingsDocument;
+export type AllDocumentTypes =
+  | AboutUsDocument
+  | HomepageDocument
+  | SettingsDocument;
+
+/**
+ * Primary content in *BannerSecond → Default → Primary*
+ */
+export interface BannerSecondSliceDefaultPrimary {
+  /**
+   * image field in *BannerSecond → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_second.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * heading field in *BannerSecond → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_second.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+}
+
+/**
+ * Default variation for BannerSecond Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerSecondSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BannerSecondSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BannerSecond*
+ */
+type BannerSecondSliceVariation = BannerSecondSliceDefault;
+
+/**
+ * BannerSecond Shared Slice
+ *
+ * - **API ID**: `banner_second`
+ * - **Description**: BannerSecond
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerSecondSlice = prismic.SharedSlice<
+  "banner_second",
+  BannerSecondSliceVariation
+>;
 
 /**
  * Item in *ColThreeCards → Default → Primary → cards*
@@ -455,6 +578,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AboutUsDocument,
+      AboutUsDocumentData,
+      AboutUsDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
@@ -463,6 +589,10 @@ declare module "@prismicio/client" {
       SettingsDocumentDataNavigationItem,
       SettingsDocumentDataFooterItem,
       AllDocumentTypes,
+      BannerSecondSlice,
+      BannerSecondSliceDefaultPrimary,
+      BannerSecondSliceVariation,
+      BannerSecondSliceDefault,
       ColThreeCardsSlice,
       ColThreeCardsSliceDefaultPrimaryCardsItem,
       ColThreeCardsSliceDefaultPrimary,

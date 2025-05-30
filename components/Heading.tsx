@@ -15,10 +15,12 @@ export default function Heading({
   return (
     <Comp
       className={clsx(
-        " font-thin leading-[34px] uppercase text-[#20384c]",
-        size === "xl" && "text-[32px] ",
+        " ",
+        size === "xl" &&
+          "text-[32px] font-thin leading-[34px] uppercase text-[#20384c]",
         size === "lg" && "text-[32px] ",
-        size === "md" && "text-[32px] ",
+        size === "md" &&
+          "text-[18px] text-[#404040] capitalize leading-[24px] font-normal ",
         size === "sm" && "text-[32px] ",
         className
       )}

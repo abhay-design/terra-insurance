@@ -18,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "col_three_cards": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }

@@ -133,6 +133,11 @@ header .main-link:hover {
   background-position: right center;
 }
 
+.btn-small {
+  background: #00529c url("/icon/small_arrow.png") no-repeat;
+  background-position: right center;
+}
+
 .sub-link::after {
   content: "";
   position: absolute;

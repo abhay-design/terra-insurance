@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = ColThreeCardsSlice | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -243,6 +243,110 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
 /**
+ * Item in *ColThreeCards → Default → Primary → cards*
+ */
+export interface ColThreeCardsSliceDefaultPrimaryCardsItem {
+  /**
+   * heading field in *ColThreeCards → Default → Primary → cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: heading
+   * - **API ID Path**: col_three_cards.default.primary.cards[].heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * image field in *ColThreeCards → Default → Primary → cards*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: col_three_cards.default.primary.cards[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * paragraph field in *ColThreeCards → Default → Primary → cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: col_three_cards.default.primary.cards[].paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph: prismic.RichTextField;
+
+  /**
+   * btn field in *ColThreeCards → Default → Primary → cards*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: btn
+   * - **API ID Path**: col_three_cards.default.primary.cards[].btn
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  btn: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * links field in *ColThreeCards → Default → Primary → cards*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: links
+   * - **API ID Path**: col_three_cards.default.primary.cards[].links
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  links: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+}
+
+/**
+ * Primary content in *ColThreeCards → Default → Primary*
+ */
+export interface ColThreeCardsSliceDefaultPrimary {
+  /**
+   * cards field in *ColThreeCards → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: col_three_cards.default.primary.cards[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  cards: prismic.GroupField<
+    Simplify<ColThreeCardsSliceDefaultPrimaryCardsItem>
+  >;
+}
+
+/**
+ * Default variation for ColThreeCards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ColThreeCardsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ColThreeCardsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ColThreeCards*
+ */
+type ColThreeCardsSliceVariation = ColThreeCardsSliceDefault;
+
+/**
+ * ColThreeCards Shared Slice
+ *
+ * - **API ID**: `col_three_cards`
+ * - **Description**: ColThreeCards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ColThreeCardsSlice = prismic.SharedSlice<
+  "col_three_cards",
+  ColThreeCardsSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -359,6 +463,11 @@ declare module "@prismicio/client" {
       SettingsDocumentDataNavigationItem,
       SettingsDocumentDataFooterItem,
       AllDocumentTypes,
+      ColThreeCardsSlice,
+      ColThreeCardsSliceDefaultPrimaryCardsItem,
+      ColThreeCardsSliceDefaultPrimary,
+      ColThreeCardsSliceVariation,
+      ColThreeCardsSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

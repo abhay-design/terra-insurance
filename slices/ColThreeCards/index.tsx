@@ -41,7 +41,7 @@ const ColThreeCards: FC<ColThreeCardsProps> = ({ slice }) => {
         <div className="wrapper relative flex flex-wrap ml-[-10px!important] w-[calc(100%_+_20px)]">
           {slice.primary.cards.map((item, index) => (
             <div
-              className="card relative w-[calc(33.33%_-_20px)] mx-[10p!important]"
+              className="card relative w-[calc(33.33%_-_20px)] mx-[10px!important]"
               key={index}
             >
               <div className="card-wrap relative">

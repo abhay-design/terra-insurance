@@ -442,6 +442,63 @@ export type BannerSecondSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Breadcrumbs → Default → Primary*
+ */
+export interface BreadcrumbsSliceDefaultPrimary {
+  /**
+   * links field in *Breadcrumbs → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: breadcrumbs.default.primary.links
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  links: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+
+  /**
+   * text field in *Breadcrumbs → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: breadcrumbs.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Breadcrumbs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BreadcrumbsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BreadcrumbsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Breadcrumbs*
+ */
+type BreadcrumbsSliceVariation = BreadcrumbsSliceDefault;
+
+/**
+ * Breadcrumbs Shared Slice
+ *
+ * - **API ID**: `breadcrumbs`
+ * - **Description**: Breadcrumbs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BreadcrumbsSlice = prismic.SharedSlice<
+  "breadcrumbs",
+  BreadcrumbsSliceVariation
+>;
+
+/**
  * Item in *ColThreeCards → Default → Primary → cards*
  */
 export interface ColThreeCardsSliceDefaultPrimaryCardsItem {
@@ -672,6 +729,10 @@ declare module "@prismicio/client" {
       BannerSecondSliceDefaultPrimary,
       BannerSecondSliceVariation,
       BannerSecondSliceDefault,
+      BreadcrumbsSlice,
+      BreadcrumbsSliceDefaultPrimary,
+      BreadcrumbsSliceVariation,
+      BreadcrumbsSliceDefault,
       ColThreeCardsSlice,
       ColThreeCardsSliceDefaultPrimaryCardsItem,
       ColThreeCardsSliceDefaultPrimary,

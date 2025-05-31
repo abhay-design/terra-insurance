@@ -1,0 +1,37 @@
+{
+  "id": "breadcrumbs",
+  "type": "SharedSlice",
+  "name": "Breadcrumbs",
+  "description": "Breadcrumbs",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "links": {
+          "type": "Link",
+          "config": {
+            "label": "links",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": true
+          }
+        },
+        "text": {
+          "type": "Text",
+          "config": {
+            "label": "text",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

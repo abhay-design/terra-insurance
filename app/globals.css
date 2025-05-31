@@ -151,3 +151,8 @@ header .main-link:hover {
 .sub-link:last-child::after {
   display: none;
 }
+
+.breadcrumbs-list {
+  background: url("/icon/breadcrumb.png") no-repeat;
+  background-position: right 4px;
+}

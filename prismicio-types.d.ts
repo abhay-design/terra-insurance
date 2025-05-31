@@ -157,6 +157,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | BodySlice
   | BreadcrumbsSlice
   | BannerSecondSlice
   | ColThreeCardsSlice
@@ -441,6 +442,48 @@ export type BannerSecondSlice = prismic.SharedSlice<
   "banner_second",
   BannerSecondSliceVariation
 >;
+
+/**
+ * Primary content in *Body → Default → Primary*
+ */
+export interface BodySliceDefaultPrimary {
+  /**
+   * bodyfield field in *Body → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: body.default.primary.bodyfield
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  bodyfield: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Body Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BodySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BodySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Body*
+ */
+type BodySliceVariation = BodySliceDefault;
+
+/**
+ * Body Shared Slice
+ *
+ * - **API ID**: `body`
+ * - **Description**: Body
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BodySlice = prismic.SharedSlice<"body", BodySliceVariation>;
 
 /**
  * Primary content in *Breadcrumbs → Default → Primary*
@@ -730,6 +773,10 @@ declare module "@prismicio/client" {
       BannerSecondSliceDefaultPrimary,
       BannerSecondSliceVariation,
       BannerSecondSliceDefault,
+      BodySlice,
+      BodySliceDefaultPrimary,
+      BodySliceVariation,
+      BodySliceDefault,
       BreadcrumbsSlice,
       BreadcrumbsSliceDefaultPrimary,
       BreadcrumbsSliceVariation,

@@ -31,6 +31,18 @@ body {
   box-sizing: border-box;
 }
 
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: normal;
+}
+p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -128,6 +140,10 @@ header .main-link:hover {
   background-size: contain;
 }
 
+.hero p {
+  font-size: 22px;
+}
+
 .btn-blue {
   background: #00529c url("/icon/arrow.png") no-repeat;
   background-position: right center;
@@ -159,4 +175,27 @@ header .main-link:hover {
 
 .breadcrumbs .wrapper {
   margin: 0 auto;
+}
+
+.prose .wrapper {
+  margin: 0 auto;
+}
+
+.prose .sub_title {
+  color: #00529c;
+  margin-bottom: 16px;
+}
+
+.prose p {
+  margin: 16px 0;
+  color: #404040;
+}
+
+.prose a {
+  color: #00529c;
+  font-weight: 700;
+}
+
+.prose a:hover {
+  text-decoration: underline;
 }

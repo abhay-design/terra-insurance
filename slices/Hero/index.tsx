@@ -34,7 +34,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative min-h-[460px] p-0 mt-[-95px!important] pb-[70px!important] flex  items-end"
+      className="relative min-h-[460px] p-0 mt-[-95px!important] pb-[70px!important] hero flex  items-end"
     >
       <div className="bg-img w-full h-full absolute top-0 left-0 z-[-1]">
         <PrismicNextImage

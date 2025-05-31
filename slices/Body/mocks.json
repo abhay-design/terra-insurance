@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"bodyfield": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Commodo elit nulla labore sit occaecat non laboris consectetur irure sunt et id. Do amet aliqua excepteur sit sunt est ut mollit occaecat aliquip dolor velit. Ipsum esse ad eu exercitation dolor elit aute ad eiusmod nostrud."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

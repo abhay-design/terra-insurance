@@ -18,27 +18,30 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Bounded className="breadcrumbs pt-[20px!important] pb-[30px!important] max-w-[1020px] mx-auto  bg-[#fff]">
-        <ol className="relative flex flex-wrap items-center max-w-[750px] list-none">
-          {slice.primary.links?.map((link, index) => (
-            <li key={index} className="text-[11px] font-normal">
-              {" "}
-              <PrismicNextLink
-                key={link.key}
-                field={link}
-                className="text-[11px] font-normal pr-[10px!important] mr-[6px!important] text-[#00529c] breadcrumbs-list"
-              />
-              {index < slice.primary.links.length - 1 && (
-                <span className="">/</span>
-              )}
-            </li>
-          ))}
-          {slice.primary.text && (
-            <li className="text-[11px] font-normal">
-              <span>{slice.primary.text}</span>
-            </li>
-          )}
-        </ol>
+      <Bounded className="breadcrumbs pt-[20px!important] pb-[30px!important]  bg-[#fff]">
+        <div className="wrapper  max-w-[980px]">
+          {" "}
+          <ol className="relative flex flex-wrap items-centerjustify-center list-none">
+            {slice.primary.links?.map((link, index) => (
+              <li key={index} className="text-[11px] font-normal">
+                {" "}
+                <PrismicNextLink
+                  key={link.key}
+                  field={link}
+                  className="text-[11px] font-normal pr-[10px!important] mr-[6px!important] text-[#00529c] breadcrumbs-list"
+                />
+                {index < slice.primary.links.length - 1 && (
+                  <span className="">/</span>
+                )}
+              </li>
+            ))}
+            {slice.primary.text && (
+              <li className="text-[11px] font-normal">
+                <span>{slice.primary.text}</span>
+              </li>
+            )}
+          </ol>
+        </div>
       </Bounded>
     </section>
   );

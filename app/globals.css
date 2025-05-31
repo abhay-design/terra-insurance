@@ -156,3 +156,7 @@ header .main-link:hover {
   background: url("/icon/breadcrumb.png") no-repeat;
   background-position: right 4px;
 }
+
+.breadcrumbs .wrapper {
+  margin: 0 auto;
+}

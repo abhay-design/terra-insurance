@@ -37,6 +37,12 @@ h3 {
   line-height: 24px;
   letter-spacing: normal;
 }
+h4 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1em;
+  letter-spacing: normal;
+}
 p {
   font-size: 13px;
   font-weight: 400;
@@ -198,4 +204,10 @@ header .main-link:hover {
 
 .prose a:hover {
   text-decoration: underline;
+}
+
+.prose .sub_italic {
+  margin: 21px 0;
+  color: #404040;
+  font-style: italic;
 }

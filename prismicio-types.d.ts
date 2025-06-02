@@ -647,48 +647,38 @@ export type ColThreeCardsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Hero → Default → Primary*
+ * Item in *Hero → Default → Primary → group*
  */
-export interface HeroSliceDefaultPrimary {
+export interface HeroSliceDefaultPrimaryGroupItem {
   /**
-   * Heading field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading: prismic.TitleField;
-
-  /**
-   * Body field in *Hero → Default → Primary*
+   * heading field in *Hero → Default → Primary → group*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.body
+   * - **API ID Path**: hero.default.primary.group[].heading
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  body: prismic.RichTextField;
+  heading: prismic.RichTextField;
 
   /**
-   * Button field in *Hero → Default → Primary*
+   * paragraph field in *Hero → Default → Primary → group*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.button
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: hero.default.primary.group[].paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  button: prismic.KeyTextField;
+  paragraph: prismic.RichTextField;
 
   /**
-   * Button link field in *Hero → Default → Primary*
+   * btnlink field in *Hero → Default → Primary → group*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.button_link
+   * - **API ID Path**: hero.default.primary.group[].btnlink
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  button_link: prismic.LinkField<
+  btnlink: prismic.LinkField<
     string,
     string,
     unknown,
@@ -697,14 +687,39 @@ export interface HeroSliceDefaultPrimary {
   >;
 
   /**
-   * Image field in *Hero → Default → Primary*
+   * btntext field in *Hero → Default → Primary → group*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.group[].btntext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  btntext: prismic.KeyTextField;
+
+  /**
+   * image field in *Hero → Default → Primary → group*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.image
+   * - **API ID Path**: hero.default.primary.group[].image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * group field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.group[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  group: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryGroupItem>>;
 }
 
 /**
@@ -787,6 +802,7 @@ declare module "@prismicio/client" {
       ColThreeCardsSliceVariation,
       ColThreeCardsSliceDefault,
       HeroSlice,
+      HeroSliceDefaultPrimaryGroupItem,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,

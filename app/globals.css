@@ -211,3 +211,69 @@ header .main-link:hover {
   color: #404040;
   font-style: italic;
 }
+
+.prose ul.products {
+  padding-top: 22px;
+  padding-left: 0;
+  display: flex;
+  list-style: none;
+}
+
+.prose ul {
+  margin: 16px 0;
+}
+
+.prose li {
+  font-size: 13px;
+  color: #404040;
+  line-height: 18px;
+  font-family: sans-serif;
+}
+
+.prose li.product {
+  width: 250px;
+  border-right: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  padding: 88px 15px 0;
+  min-height: 75px;
+}
+
+.prose li.product:first-child {
+  background: url("/icon/product1.png") no-repeat;
+  background-position: center 8px;
+}
+
+.prose li.product:nth-child(2) {
+  background: url("/icon/product2.png") no-repeat;
+  background-position: center 8px;
+}
+
+.prose li.product:hover:nth-child(2) {
+  background: url("/icon/product2_h.png") no-repeat;
+  background-position: center 7px;
+  text-decoration: underline;
+}
+
+.prose li.product a {
+  color: #404040;
+}
+
+.prose li.product:hover:first-child {
+  background: url("/icon/product1_h.png") no-repeat;
+  background-position: center 8px;
+  text-decoration: underline;
+}
+
+.prose li.product:hover:last-child {
+  background: url("/icon/product3_h.png") no-repeat;
+  background-position: center 26px;
+  text-decoration: underline;
+}
+
+.prose li.product:last-child {
+  border-right: unset;
+  background: url("/icon/product3.png") no-repeat;
+  background-position: center 26px;
+}

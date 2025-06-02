@@ -219,6 +219,13 @@ header .main-link:hover {
   list-style: none;
 }
 
+.prose ul.expertise {
+  padding-top: 22px;
+  padding-left: 0;
+  display: flex;
+  list-style: none;
+}
+
 .prose ul {
   margin: 16px 0;
 }
@@ -240,6 +247,61 @@ header .main-link:hover {
   min-height: 75px;
 }
 
+.prose ul.expertise li {
+  width: 219px;
+  border-right: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  padding: 88px 25px 0;
+  min-height: 75px;
+}
+
+.prose ul.expertise li:first-child {
+  background: url("/icon/review.png") no-repeat;
+  background-position: center 5px;
+}
+
+.prose ul.expertise li:nth-child(2) {
+  background: url("/icon/education.png") no-repeat;
+  background-position: center 5px;
+}
+
+.prose ul.expertise li:nth-child(3) {
+  background: url("/icon/peer.png") no-repeat;
+  background-position: center 5px;
+}
+
+.prose ul.expertise li:last-child {
+  background: url("/icon/credits.png") no-repeat;
+  background-position: center 5px;
+  border-right: unset;
+}
+
+.prose ul.expertise li:hover:first-child {
+  background: url("/icon/review_h.png") no-repeat;
+  background-position: center 5px;
+  text-decoration: underline;
+}
+
+.prose ul.expertise li:hover:nth-child(2) {
+  background: url("/icon/education_h.png") no-repeat;
+  background-position: center 5px;
+  text-decoration: underline;
+}
+
+.prose ul.expertise li:hover:nth-child(3) {
+  background: url("/icon/peer_h.png") no-repeat;
+  background-position: center 5px;
+  text-decoration: underline;
+}
+
+.prose ul.expertise li:hover:last-child {
+  background: url("/icon/credits_h.png") no-repeat;
+  background-position: center 5px;
+  text-decoration: underline;
+}
+
 .prose li.product:first-child {
   background: url("/icon/product1.png") no-repeat;
   background-position: center 8px;
@@ -257,6 +319,10 @@ header .main-link:hover {
 }
 
 .prose li.product a {
+  color: #404040;
+}
+
+.prose ul.expertise li a {
   color: #404040;
 }
 

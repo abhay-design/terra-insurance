@@ -401,3 +401,20 @@ header .main-link:hover {
 .hero .swiper-button-next::after {
   display: none;
 }
+
+h2.block-title {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.prose ul.main_links {
+  list-style: none;
+  max-width: 290px;
+}
+
+.prose ul.main_links li {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}

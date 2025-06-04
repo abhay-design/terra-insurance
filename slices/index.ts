@@ -8,4 +8,5 @@ export const components = {
   breadcrumbs: dynamic(() => import("./Breadcrumbs")),
   col_three_cards: dynamic(() => import("./ColThreeCards")),
   hero: dynamic(() => import("./Hero")),
+  testimonials: dynamic(() => import("./Testimonials")),
 };

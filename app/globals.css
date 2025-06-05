@@ -418,3 +418,27 @@ h2.block-title {
   padding-top: 10px;
   border-top: 1px solid #ccc;
 }
+
+.testimonials .wrapper {
+  margin: 0 auto;
+}
+
+.testimonials h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #404040;
+  padding-bottom: 11px;
+  text-transform: capitalize;
+}
+
+.testimonials h3 {
+  font-size: 20px;
+  color: #404040;
+  font-weight: 700;
+  margin: 26px 0;
+}
+
+.testimonial-content p {
+  margin: 16px 0;
+  color: #404040;
+}

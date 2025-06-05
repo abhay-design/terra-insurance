@@ -806,6 +806,21 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Testimonials → Default → Primary → group*
+ */
+export interface TestimonialsSliceDefaultPrimaryGroupItem {
+  /**
+   * textimonial field in *Testimonials → Default → Primary → group*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.group[].textimonial
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  textimonial: prismic.ContentRelationshipField<"testimonials">;
+}
+
+/**
  * Primary content in *Testimonials → Default → Primary*
  */
 export interface TestimonialsSliceDefaultPrimary {
@@ -820,14 +835,14 @@ export interface TestimonialsSliceDefaultPrimary {
   heading: prismic.RichTextField;
 
   /**
-   * textimonial field in *Testimonials → Default → Primary*
+   * group field in *Testimonials → Default → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.default.primary.textimonial
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: testimonials.default.primary.group[]
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  textimonial: prismic.ContentRelationshipField<"testimonials">;
+  group: prismic.GroupField<Simplify<TestimonialsSliceDefaultPrimaryGroupItem>>;
 }
 
 /**
@@ -920,6 +935,7 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       TestimonialsSlice,
+      TestimonialsSliceDefaultPrimaryGroupItem,
       TestimonialsSliceDefaultPrimary,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,

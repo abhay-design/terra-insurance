@@ -21,15 +21,24 @@
             "multi": "heading1,strong,em"
           }
         },
-        "textimonial": {
-          "type": "Link",
+        "group": {
+          "type": "Group",
           "config": {
-            "label": "textimonial",
-            "select": "document",
-            "repeat": false,
-            "customtypes": [
-              "testimonials"
-            ]
+            "label": "group",
+            "repeat": true,
+            "fields": {
+              "textimonial": {
+                "type": "Link",
+                "config": {
+                  "label": "textimonial",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "testimonials"
+                  ]
+                }
+              }
+            }
           }
         }
       },

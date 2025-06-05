@@ -14,13 +14,26 @@
 					}
 				]
 			},
-			"textimonial": {
-				"__TYPE__": "LinkContent",
-				"key": "e9263f3e-1956-40ae-8266-7e8caa47aa3e",
-				"value": {
-					"__TYPE__": "DocumentLink",
-					"id": "mock_document_id"
-				}
+			"group": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"textimonial",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "f8ba5134-95a8-465d-94e2-9f3ac9841511",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []

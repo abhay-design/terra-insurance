@@ -442,3 +442,16 @@ h2.block-title {
   margin: 16px 0;
   color: #404040;
 }
+
+.testimonial-content ol {
+  margin: 16px 0;
+  padding-left: 40px;
+  list-style: decimal;
+}
+
+.testimonial-content ol li {
+  font-size: 13px;
+  line-height: 18px;
+  color: #404040;
+  font-family: sans-serif;
+}

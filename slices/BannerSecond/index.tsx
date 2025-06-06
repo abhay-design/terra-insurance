@@ -27,7 +27,7 @@ const BannerSecond: FC<BannerSecondProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex items-center min-h-[330px] mt-[-95px!important]"
+      className="flex items-center min-h-[330px] mt-[-95px!important] banner-second"
     >
       <div className="bg-img w-full h-full absolute left-0 top-0 z-0">
         <PrismicNextImage

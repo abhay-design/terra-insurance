@@ -17,8 +17,9 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="bg-[#fff]"
     >
-      <Bounded className="breadcrumbs pt-[20px!important] pb-[30px!important]  bg-[#fff]">
+      <Bounded className="breadcrumbs pt-[20px!important] pb-[30px!important]">
         <div className="wrapper  max-w-[980px]">
           {" "}
           <ol className="relative flex flex-wrap items-centerjustify-center list-none">

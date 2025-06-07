@@ -156,6 +156,60 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Management documents
+ */
+interface ManagementDocumentData {
+  /**
+   * title field in *Management*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: management.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * subtitle field in *Management*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: subtitle
+   * - **API ID Path**: management.subtitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * teaser field in *Management*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: teaser
+   * - **API ID Path**: management.teaser
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  teaser: prismic.RichTextField;
+}
+
+/**
+ * Management document from Prismic
+ *
+ * - **API ID**: `management`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ManagementDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ManagementDocumentData>,
+    "management",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
   | TestimonialsSlice
   | BodySlice
@@ -440,6 +494,7 @@ export type TestimonialsDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | AboutUsDocument
   | HomepageDocument
+  | ManagementDocument
   | PageDocument
   | SettingsDocument
   | TestimonialsDocument;
@@ -902,6 +957,8 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      ManagementDocument,
+      ManagementDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

@@ -16,7 +16,7 @@ const Body: FC<BodyProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-white prose pb-[40px!important]"
+      className="bg-white prose pt-[10px!important] pb-[40px!important]"
     >
       <div className="wrapper max-w-[980px]">{parse(contentHtml)}</div>
     </Bounded>
